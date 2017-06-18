@@ -1,21 +1,20 @@
 package com.rhmsoft.fm;
 
+import java.io.IOException;
+import java.net.URL;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
 /**
  * Created by Yutaka on 5/24/17.
  */
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.io.IOException;
-import java.net.URL;
-import java.util.concurrent.TimeUnit;
 
 public class ImageTest {
 
@@ -66,6 +65,10 @@ public class ImageTest {
 
     /*--------------------Test Cases--------------------T*/
 
+    /**
+     * @throws NullPointerException
+     * @throws IOException
+     */
     @Test(enabled = true, groups={"images", "dryrun", "regression", "all"})
     public void quantityImages() throws NullPointerException, IOException {
         homePage.navigateToImagePage();

@@ -104,7 +104,11 @@ qqq
                         </goals>
                         <configuration>
                             <destFile>${project.build.directory}/jacoco.exec</destFile>
+                            
+                            <!-- 
                             <propertyName>surefireArgLine</propertyName>
+                             -->
+                            
                         </configuration>
                     </execution>
                     <execution>
