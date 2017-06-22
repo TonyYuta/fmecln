@@ -69,21 +69,20 @@ public class ImageTest {
      * @throws NullPointerException
      * @throws IOException
      */
-    @Test(enabled = true, groups={"images", "dryrun", "regression", "all"})
+    @Test(enabled = true, groups = {"images", "dryrun", "regression", "all"})
     public void quantityImages() throws NullPointerException, IOException {
         homePage.navigateToImagePage();
-
     }
 
-    @Test(enabled = true, groups={"images", "dryrun", "regression", "all"})
+    @Test(enabled = true, groups = {"images", "dryrun", "regression", "all"})
     public void quantityImages2() {
     }
 
-    @Test(enabled = true, groups={"images", "dryrun", "regression", "all"})
+    @Test(enabled = true, groups = {"images", "dryrun", "regression", "all"})
     public void quantityImages3() {
     }
 
-    @Test(enabled = true, groups={"images", "dryrun", "regression", "all"})
+    @Test(enabled = true, groups = {"images", "dryrun", "regression", "all"})
     public void quantityImages4() {
     }
 
