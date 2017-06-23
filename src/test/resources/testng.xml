@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="image">
-    <test name="AndroidM_S07Edge">
-        <parameter name="device" value="pixel" />
+<suite name="Code Coverage">
+    <test name="Filemanager">
         <classes>
             <class name="com.rhmsoft.fm.HelperTest"/>
             <class name="com.rhmsoft.fm.ImageTest"/>
