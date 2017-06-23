@@ -105,9 +105,9 @@ qqq
                         <configuration>
                             <destFile>${project.build.directory}/jacoco.exec</destFile>
                             
-                            <!-- 
+                            
                             <propertyName>surefireArgLine</propertyName>
-                             -->
+                             
                             
                         </configuration>
                     </execution>
@@ -185,9 +185,9 @@ qqq
                 <artifactId>maven-pmd-plugin</artifactId>
                 <version>3.8</version>
                 <configuration>
-                    <!--
+                    
                               <linkXref>true</linkXref>
-                    -->
+                    
                     <sourceEncoding>utf-8</sourceEncoding>
                     <skipEmptyReport>false</skipEmptyReport>
                     <minimumTokens>100</minimumTokens>
