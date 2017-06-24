@@ -66,7 +66,6 @@ public class ImageTest {
     /*--------------------Test Cases--------------------T*/
 
     /**
-     * @throws NullPointerException
      * @throws IOException
      */
     @Test(enabled = true, groups={"images", "dryrun", "regression", "all"})

@@ -1,18 +1,16 @@
 package com.rhmsoft.fm;
 
+import java.io.IOException;
+
 /**
  * Created by Yutaka on 5/9/17.
  */
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import io.appium.java_client.AppiumDriver;
-
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.io.IOException;
-import java.util.concurrent.TimeUnit;
+import io.appium.java_client.AppiumDriver;
 
 public class HomePage {
 
@@ -43,8 +41,15 @@ public class HomePage {
 
 
  //   elementLocator
-    public void navigateToImagePage() throws IOException {
-        extData = new ExtData();
+    //public void navigateToImagePage() throws IOException {
+    public void navigateToImagePage() {
+
+        try {
+			extData = new ExtData();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
         WebElement imageBtn = driver.findElement(By.id(extData.imageBtn));
         imageBtn.click();
     }
