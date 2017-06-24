@@ -1,18 +1,12 @@
 package com.rhmsoft.fm;
 
-import io.appium.java_client.AppiumDriver;
-
-import java.io.FileNotFoundException;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.BufferedReader;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Properties;
+
+import io.appium.java_client.AppiumDriver;
 
 /**
  * Created by aolyva on 5/10/17.
@@ -44,9 +38,12 @@ public class ExtData {
 
 
     /**
+     * @throws FileNotFoundException 
      * @throws IOException
      */
-    ExtData() throws IOException {
+    //ExtData() throws IOException {
+    ExtData() throws FileNotFoundException {
+
 
         // Specify the file location I used . operation here because
         //we have object repository inside project directory only
@@ -58,7 +55,12 @@ public class ExtData {
         // Create Properties class object to read properties file
         Properties pro = new Properties();
 
-        pro.load(fis);
+        try {
+			pro.load(fis);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
         // xpath
          searchBtnXpath = pro.getProperty("searchBtnXpathLoc");
