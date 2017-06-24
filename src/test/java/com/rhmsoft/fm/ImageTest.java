@@ -52,7 +52,7 @@ public class ImageTest {
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
         // creating instance of HomePage class
-        homePage = new HomePage(driver);
+  //      homePage = new HomePage(driver);
 
         // creating instance of Helper class
         helper = new Helper(driver);
@@ -72,6 +72,9 @@ public class ImageTest {
     @Test(enabled = true, groups={"images", "dryrun", "regression", "all"})
     public void quantityImages() {
    // public void quantityImages() {
+    	
+    	homePage = new HomePage(driver);
+    	 
         try {
 			homePage.navigateToImagePage();
 		} catch (FileNotFoundException e) {
