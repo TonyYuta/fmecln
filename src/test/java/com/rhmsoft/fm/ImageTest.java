@@ -1,5 +1,6 @@
 package com.rhmsoft.fm;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
@@ -35,7 +36,10 @@ public class ImageTest {
     private String capabilInfo;
 
     @BeforeMethod
-    public void setUp() throws Exception {
+//    public void setUp() throws Exception {
+    public void setUp() throws Exception, NullPointerException {
+    	
+    	
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
      //   capabilities.setCapability("deviceName", "AndroidTestDeviceNexus5");
@@ -66,7 +70,7 @@ public class ImageTest {
     /**
      */
     @Test(enabled = true, groups={"images", "dryrun", "regression", "all"})
-    public void quantityImages() throws IOException {
+    public void quantityImages() throws IOException, FileNotFoundException {
    // public void quantityImages() {
         homePage.navigateToImagePage();
     }
