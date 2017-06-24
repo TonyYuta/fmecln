@@ -2,7 +2,6 @@ package com.rhmsoft.fm;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
@@ -38,11 +37,10 @@ public class ExtData {
 
 
     /**
-     * @throws FileNotFoundException 
      * @throws IOException
      */
     //ExtData() throws IOException {
-    ExtData() throws FileNotFoundException {
+    ExtData() throws IOException {
 
 
         // Specify the file location I used . operation here because
@@ -55,12 +53,9 @@ public class ExtData {
         // Create Properties class object to read properties file
         Properties pro = new Properties();
 
-        try {
-			pro.load(fis);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+				pro.load(fis);
+		
+
 
         // xpath
          searchBtnXpath = pro.getProperty("searchBtnXpathLoc");

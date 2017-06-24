@@ -1,6 +1,7 @@
 package com.rhmsoft.fm;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
 /**
  * Created by Yutaka on 5/9/17.
@@ -40,7 +41,12 @@ public class HomePage {
     //public void navigateToImagePage() throws IOException {
     public void navigateToImagePage() throws FileNotFoundException {
 
-			extData = new ExtData();
+			try {
+				extData = new ExtData();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 
         WebElement imageBtn = driver.findElement(By.id(extData.imageBtn));
         imageBtn.click();
