@@ -70,9 +70,17 @@ public class ImageTest {
     /**
      */
     @Test(enabled = true, groups={"images", "dryrun", "regression", "all"})
-    public void quantityImages() throws IOException, FileNotFoundException {
+    public void quantityImages() {
    // public void quantityImages() {
-       // homePage.navigateToImagePage();
+        try {
+			homePage.navigateToImagePage();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (NullPointerException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     	System.out.println("=========== quantityImages() end ==========");
     }
 
