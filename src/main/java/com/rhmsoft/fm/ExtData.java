@@ -42,21 +42,18 @@ public class ExtData {
     //ExtData() throws IOException {
     ExtData() throws IOException {
 
-
         // Specify the file location I used . operation here because
         //we have object repository inside project directory only
         File file = new File("src/test/resources/locators.properties");
 
         // Create  FileInputStream object
-        FileInputStream fis = new FileInputStream(file);
+        FileInputStream fis;
+		fis = new FileInputStream(file);
 
         // Create Properties class object to read properties file
         Properties pro = new Properties();
-
-				pro.load(fis);
-		
-
-
+		pro.load(fis);
+	
         // xpath
          searchBtnXpath = pro.getProperty("searchBtnXpathLoc");
          homeBtnXpath = pro.getProperty("homeBtnXpathLoc");
@@ -76,6 +73,7 @@ public class ExtData {
          installedAppsBtn = pro.getProperty("installedAppsBtnLoc");
          allFilesBtn = pro.getProperty("allFilesBtnLoc");
          hotAppsNearby = pro.getProperty("hotAppsNearbyLoc");
+         
     }
 
 

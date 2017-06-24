@@ -39,7 +39,7 @@ public class HomePage {
 
  //   elementLocator
     //public void navigateToImagePage() throws IOException {
-    public void navigateToImagePage() throws FileNotFoundException {
+    public void navigateToImagePage() throws FileNotFoundException, NullPointerException {
 
 			try {
 				extData = new ExtData();
