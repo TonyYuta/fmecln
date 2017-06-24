@@ -62,11 +62,8 @@ public class ImageTest {
         driver.quit();
     }
 
-
     /*--------------------Test Cases--------------------T*/
-
     /**
-     * @throws IOException
      */
     @Test(enabled = true, groups={"images", "dryrun", "regression", "all"})
    // public void quantityImages() throws NullPointerException, IOException {

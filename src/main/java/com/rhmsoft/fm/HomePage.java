@@ -26,8 +26,6 @@ public class HomePage {
         // driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
 
-
-
     /*
     public void navigateToImagePage() throws NullPointerException {
 
@@ -37,8 +35,6 @@ public class HomePage {
 
     }
     */
-
-
 
  //   elementLocator
     //public void navigateToImagePage() throws IOException {
