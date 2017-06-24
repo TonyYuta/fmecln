@@ -78,12 +78,16 @@ public class ImageTest {
 			// TODO Auto-generated catch block
 			System.out.println("================ FileNotFoundException ====================");
 			e.printStackTrace();
-		} catch (NullPointerException e) {
+		} 
+/*        
+        catch (NullPointerException e) {
 			// TODO Auto-generated catch block
 			System.out.println("================ NullPointerException ====================");
 
 			e.printStackTrace();
 		}
+ */       
+        
     	System.out.println("=========== quantityImages() end ==========");
     }
 
