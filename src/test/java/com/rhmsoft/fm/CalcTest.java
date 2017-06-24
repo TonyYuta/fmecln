@@ -10,7 +10,6 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import io.appium.java_client.AppiumDriver;
@@ -29,19 +28,19 @@ public class CalcTest {
     public String homeBtnLoc = "com.rhmsoft.fm:id/new_home_title_tv";
     public String menuBtnLoc = "com.rhmsoft.fm:id/home_classify_text_images";
     
-    @BeforeMethod
-    public void setUp() throws Exception {
-
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-     //   capabilities.setCapability("deviceName", "AndroidTestDeviceNexus5");
-        capabilities.setCapability("deviceName", "AndroidTestDevice01");
-        capabilities.setCapability("app", "/Users/Yutaka/Documents/Mobile_Testing/Apk/com.rhmsoft.fm_v2.5.8-20580589_Android-4.0.apk");
-        capabilities.setCapability("fullReset", "false");
-        capabilities.setCapability("noReset", "true");
-
-        driver = new AndroidDriver(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
-        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-    }
+//    @BeforeMethod
+//    public void setUp() throws Exception {
+//
+//        DesiredCapabilities capabilities = new DesiredCapabilities();
+//     //   capabilities.setCapability("deviceName", "AndroidTestDeviceNexus5");
+//        capabilities.setCapability("deviceName", "AndroidTestDevice01");
+//        capabilities.setCapability("app", "/Users/Yutaka/Documents/Mobile_Testing/Apk/com.rhmsoft.fm_v2.5.8-20580589_Android-4.0.apk");
+//        capabilities.setCapability("fullReset", "false");
+//        capabilities.setCapability("noReset", "true");
+//
+//        driver = new AndroidDriver(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
+//        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+//    }
 
     @AfterMethod
     public void tearDown() throws IOException {
@@ -69,11 +68,16 @@ public class CalcTest {
       */
      @Test(enabled = true, groups={"images", "dryrun", "regression", "all"})
      public void quantityImages() throws NullPointerException, IOException {
-         //navigateToImagePage();
-         
+
+         DesiredCapabilities capabilities = new DesiredCapabilities();
+         capabilities.setCapability("deviceName", "AndroidTestDevice01");
+         capabilities.setCapability("app", "/Users/Yutaka/Documents/Mobile_Testing/Apk/com.rhmsoft.fm_v2.5.8-20580589_Android-4.0.apk");
+         capabilities.setCapability("fullReset", "false");
+         capabilities.setCapability("noReset", "true");
+         driver = new AndroidDriver(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
+         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
          WebElement homeBtnEl = driver.findElement(By.id(homeBtnLoc));
-         homeBtnEl.click();
-         
+         homeBtnEl.click();        
      }
 
     
