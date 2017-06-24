@@ -72,7 +72,8 @@ public class ImageTest {
     @Test(enabled = true, groups={"images", "dryrun", "regression", "all"})
     public void quantityImages() throws IOException, FileNotFoundException {
    // public void quantityImages() {
-        homePage.navigateToImagePage();
+       // homePage.navigateToImagePage();
+    	System.out.println("=========== quantityImages() end ==========");
     }
 
     @Test(enabled = false, groups={"images", "dryrun", "regression", "all"})
