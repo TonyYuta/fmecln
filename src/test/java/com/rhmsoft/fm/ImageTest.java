@@ -76,9 +76,12 @@ public class ImageTest {
 			homePage.navigateToImagePage();
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
+			System.out.println("================ FileNotFoundException ====================");
 			e.printStackTrace();
 		} catch (NullPointerException e) {
 			// TODO Auto-generated catch block
+			System.out.println("================ NullPointerException ====================");
+
 			e.printStackTrace();
 		}
     	System.out.println("=========== quantityImages() end ==========");
