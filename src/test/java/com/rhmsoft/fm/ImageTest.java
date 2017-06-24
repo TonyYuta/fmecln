@@ -70,9 +70,9 @@ public class ImageTest {
      * @throws IOException
      */
     @Test(enabled = true, groups={"images", "dryrun", "regression", "all"})
-    public void quantityImages() throws NullPointerException, IOException {
+   // public void quantityImages() throws NullPointerException, IOException {
+    public void quantityImages() throws IOException {
         homePage.navigateToImagePage();
-
     }
 
     @Test(enabled = false, groups={"images", "dryrun", "regression", "all"})
