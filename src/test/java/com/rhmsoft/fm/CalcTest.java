@@ -69,7 +69,11 @@ public class CalcTest {
       */
      @Test(enabled = true, groups={"images", "dryrun", "regression", "all"})
      public void quantityImages() throws NullPointerException, IOException {
-         navigateToImagePage();
+         //navigateToImagePage();
+         
+         WebElement homeBtnEl = driver.findElement(By.id(homeBtnLoc));
+         homeBtnEl.click();
+         
      }
 
     
