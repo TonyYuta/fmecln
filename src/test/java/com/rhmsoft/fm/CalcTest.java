@@ -48,7 +48,8 @@ public class CalcTest {
     }
 	
     
-    public void navigateToImagePage() throws NullPointerException {
+  //  public void navigateToImagePage() throws NullPointerException {
+    public void navigateToImagePage() {
          WebElement homeBtnEl = driver.findElement(By.id(homeBtnLoc));
          homeBtnEl.click();
      }
