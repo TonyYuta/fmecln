@@ -61,16 +61,12 @@ public class ImageTest {
     public void tearDown() throws IOException {
         driver.quit();
     }
-
-    
-    
-    
     
     /*--------------------Test Cases--------------------T*/
     /**
      */
     @Test(enabled = true, groups={"images", "dryrun", "regression", "all"})
-    public void quantityImages() throws NullPointerException, IOException {
+    public void quantityImages() throws IOException {
    // public void quantityImages() {
         homePage.navigateToImagePage();
     }
