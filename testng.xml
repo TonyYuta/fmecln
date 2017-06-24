@@ -6,9 +6,9 @@
          
             <class name="com.rhmsoft.fm.HelperTest"/>
             <class name="com.rhmsoft.fm.ImageTest"/>
-             
+             <!-- 
             <class name="com.rhmsoft.fm.CalcTest"/>
-            
+             -->
         </classes>
     </test>
 </suite>
