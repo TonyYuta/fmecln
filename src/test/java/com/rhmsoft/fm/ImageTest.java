@@ -75,15 +75,15 @@ public class ImageTest {
 
     }
 
-    @Test(enabled = true, groups={"images", "dryrun", "regression", "all"})
+    @Test(enabled = false, groups={"images", "dryrun", "regression", "all"})
     public void quantityImages2() {
     }
 
-    @Test(enabled = true, groups={"images", "dryrun", "regression", "all"})
+    @Test(enabled = false, groups={"images", "dryrun", "regression", "all"})
     public void quantityImages3() {
     }
 
-    @Test(enabled = true, groups={"images", "dryrun", "regression", "all"})
+    @Test(enabled = false, groups={"images", "dryrun", "regression", "all"})
     public void quantityImages4() {
     }
 
