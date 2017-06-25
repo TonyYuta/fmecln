@@ -57,10 +57,8 @@ public class ImageTest {
 
     @BeforeMethod
 //    public void setUp() throws Exception {
-    public void setUp() throws Exception, NullPointerException {
+    public void setUp() throws IOException {
     	
-    	
-
         DesiredCapabilities capabilities = new DesiredCapabilities();
      //   capabilities.setCapability("deviceName", "AndroidTestDeviceNexus5");
         capabilities.setCapability("deviceName", "AndroidTestDevice01");
@@ -113,7 +111,8 @@ public class ImageTest {
     public void quantityImages2() {
         homePage = new HomePage(driver);
 		homePage.qqqMethodOnHomePage();		 
-		System.out.println("================ quantityImages2() end ====================");
+		System.out.println("================ quantityImages2() ======= end ====================");
+
 
     }
 
