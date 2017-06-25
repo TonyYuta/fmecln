@@ -105,9 +105,9 @@ qqq
                         <configuration>
                             <destFile>${project.build.directory}/jacoco.exec</destFile>
                             
-                            
+                            <!-- 
                             <propertyName>surefireArgLine</propertyName>
-                             
+                              -->
                             
                         </configuration>
                     </execution>
@@ -136,7 +136,11 @@ qqq
                         </goals>
                         <configuration>
                             <testFailureIgnore>true</testFailureIgnore>
+                            
+                            <!-- 
                             <argLine>${surefireArgLine}</argLine>
+                             -->
+                            
                         </configuration>
                     </execution>
                 </executions>

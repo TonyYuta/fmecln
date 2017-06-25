@@ -135,7 +135,7 @@ public class ImageTest {
 
     @Test(enabled = true, groups = {"add","allcalc"}, priority=0)
     public void test_add() {
-    	calc = new Calc();
+    	//calc = new Calc();
     	calc.qqqCalc();
         Assert.assertEquals(Calc.add(2, 2), 4);
     }
