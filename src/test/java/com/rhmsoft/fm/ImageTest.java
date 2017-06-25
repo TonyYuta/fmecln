@@ -23,6 +23,7 @@ public class ImageTest {
     HomePage homePage;
     Helper helper;
     ExtData extData;
+    Calc calc;
     
     // xpath
     String searchBtnXpath;
@@ -78,6 +79,9 @@ public class ImageTest {
 
         // creating instance of ExtData class
         extData = new ExtData();
+        
+        // creating instance of Calc class
+        calc = new Calc();
     }
 
     @AfterMethod
@@ -131,6 +135,7 @@ public class ImageTest {
 
     @Test(enabled = true, groups = {"add","allcalc"}, priority=0)
     public void test_add() {
+    	calc.qqqCalc();
         Assert.assertEquals(Calc.add(2, 2), 4);
     }
     

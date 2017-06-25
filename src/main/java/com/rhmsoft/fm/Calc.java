@@ -21,5 +21,9 @@ public class Calc {
         if (y == 0) {
         	throw new ArithmeticException();} return x / y;
     }
+    
+    public void qqqCalc() {
+    	System.out.println("================ Class Calc ===== qqqCalc() ==== end ===================");
+    }
 
 }
