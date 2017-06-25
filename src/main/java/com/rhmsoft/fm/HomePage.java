@@ -12,8 +12,6 @@ import io.appium.java_client.AppiumDriver;
 
 public class HomePage {
 
-
-
     AppiumDriver driver;
     WebDriverWait wait;
 
@@ -45,6 +43,9 @@ public class HomePage {
         imageBtn.click();
     }
 
+    public void qqqMethodOnHomePage() {
+    	System.out.println("========================== qqqMethodOnHomePage() end =========================");
+    }
 
 
 }
