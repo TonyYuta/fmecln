@@ -17,7 +17,7 @@ public class HomePage {
 
     ExtData extData;
 
-    public HomePage(AppiumDriver driver) {
+    HomePage(AppiumDriver driver) {
         this.driver = driver;
         // driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }

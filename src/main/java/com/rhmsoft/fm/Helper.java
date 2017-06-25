@@ -9,7 +9,7 @@ public class Helper {
 
     AppiumDriver driver;
 
-    public Helper(AppiumDriver driver) {
+    Helper(AppiumDriver driver) {
         this.driver = driver;
     }
 

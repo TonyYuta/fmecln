@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -53,7 +54,7 @@ public class ImageTest {
     }
 
     // Capabilities
-    private String capabilInfo;
+    public String capabilInfo;
 
     @BeforeMethod
 //    public void setUp() throws Exception {
@@ -107,7 +108,7 @@ public class ImageTest {
     	System.out.println("=========== quantityImages() end ==========");
     }
 
-    @Test(enabled = true, groups={"images", "dryrun", "regression", "all"})
+    @Test(enabled = true, groups={"images", "dryrun", "regression", "all"}, priority = 1)
     public void quantityImages2() {
        // homePage = new HomePage(driver);
 		homePage.qqqMethodOnHomePage();		 
@@ -125,5 +126,14 @@ public class ImageTest {
     }
 
 
+    
+    // =========== working TCs ====================
+
+    @Test(enabled = true, groups = {"add","allcalc"}, priority=0)
+    public void test_add() {
+        Assert.assertEquals(Calc.add(2, 2), 4);
+    }
+    
+    
 
 }

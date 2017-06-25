@@ -48,12 +48,12 @@ public class ExtData {
 
         // Create  FileInputStream object
         FileInputStream fis;
-		fis = new FileInputStream(file);
-
+			fis = new FileInputStream(file);
+	
         // Create Properties class object to read properties file
         Properties pro = new Properties();
-		pro.load(fis);
-	
+			pro.load(fis);
+		
         // xpath
          searchBtnXpath = pro.getProperty("searchBtnXpathLoc");
          homeBtnXpath = pro.getProperty("homeBtnXpathLoc");
@@ -75,7 +75,7 @@ public class ExtData {
          hotAppsNearby = pro.getProperty("hotAppsNearbyLoc");
          
     }
-
+    
 
 
 }
