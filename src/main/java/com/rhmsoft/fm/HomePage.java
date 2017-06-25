@@ -37,10 +37,11 @@ public class HomePage {
  //   elementLocator
     public void navigateToImagePage() {
     //public void navigateToImagePage() throws FileNotFoundException {
-    	
-      
+//        WebElement imageBtn = driver.findElement(By.id(extData.imageBtn));
+        WebElement imageBtn = driver.findElement(By.id("com.rhmsoft.fm:id/home_classify_text_images"));
         
-        WebElement imageBtn = driver.findElement(By.id(extData.imageBtn));
+       // imageBtnLoc=com.rhmsoft.fm:id/home_classify_text_images
+
         imageBtn.click();
     }
 
