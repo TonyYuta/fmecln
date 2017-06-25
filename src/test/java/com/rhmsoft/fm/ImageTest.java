@@ -89,7 +89,7 @@ public class ImageTest {
     /*--------------------Test Cases--------------------T*/
     /**
      */
-    @Test(enabled = true, groups={"images", "dryrun", "regression", "all"})
+    @Test(enabled = false, groups={"images", "dryrun", "regression", "all"})
     public void quantityImages() {
    // public void quantityImages() {
     	
@@ -109,8 +109,10 @@ public class ImageTest {
     	System.out.println("=========== quantityImages() end ==========");
     }
 
-    @Test(enabled = false, groups={"images", "dryrun", "regression", "all"})
+    @Test(enabled = true, groups={"images", "dryrun", "regression", "all"})
     public void quantityImages2() {
+		System.out.println("================ quantityImages2() end ====================");
+
     }
 
     @Test(enabled = false, groups={"images", "dryrun", "regression", "all"})
