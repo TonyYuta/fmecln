@@ -44,7 +44,7 @@ public class HomePage {
     }
 
     public void qqqMethodOnHomePage() {
-    	System.out.println("========================== qqqMethodOnHomePage() end =========================");
+		System.out.println("================ quantityImages2() ======= end ====================");
     }
 
 
