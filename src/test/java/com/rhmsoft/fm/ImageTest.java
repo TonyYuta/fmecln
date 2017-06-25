@@ -108,7 +108,7 @@ public class ImageTest {
     	System.out.println("=========== quantityImages() end ==========");
     }
 
-    @Test(enabled = true, groups={"images", "dryrun", "regression", "all"}, priority = 1)
+    @Test(enabled = false, groups={"images", "dryrun", "regression", "all"}, priority = 1)
     public void quantityImages2() {
        // homePage = new HomePage(driver);
 		homePage.qqqMethodOnHomePage();		 
