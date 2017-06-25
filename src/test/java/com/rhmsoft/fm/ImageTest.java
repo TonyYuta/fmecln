@@ -1,6 +1,5 @@
 package com.rhmsoft.fm;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
@@ -23,6 +22,27 @@ public class ImageTest {
     HomePage homePage;
     Helper helper;
     ExtData extData;
+    
+    // xpath
+    String searchBtnXpath;
+    String homeBtnXpath;
+    String recentBtnXPath;
+
+    // id
+    String recentBtn;
+    String homeBtn;
+    String imageBtn;
+    String audioBtn;
+    String videoBtn;
+    String docBtn;
+    String deviceBtn;
+    String largeFilesBtn;
+    String unnecessaryFilesBtn;
+    String usedApkBtn;
+    String installedAppsBtn;
+    String allFilesBtn;
+    String hotAppsNearby;
+    
 
     public String getCapabilInfo() {
         return capabilInfo;
@@ -52,7 +72,7 @@ public class ImageTest {
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
         // creating instance of HomePage class
-  //      homePage = new HomePage(driver);
+        homePage = new HomePage(driver);
 
         // creating instance of Helper class
         helper = new Helper(driver);
@@ -73,15 +93,10 @@ public class ImageTest {
     public void quantityImages() {
    // public void quantityImages() {
     	
-    	homePage = new HomePage(driver);
+    	//homePage = new HomePage(driver);
     	 
-        try {
-			homePage.navigateToImagePage();
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			System.out.println("================ FileNotFoundException ====================");
-			e.printStackTrace();
-		} 
+			homePage.navigateToImagePage();		 
+
 /*        
         catch (NullPointerException e) {
 			// TODO Auto-generated catch block
@@ -89,7 +104,7 @@ public class ImageTest {
 
 			e.printStackTrace();
 		}
- */       
+ */      
         
     	System.out.println("=========== quantityImages() end ==========");
     }
