@@ -91,7 +91,9 @@ qqq
                     <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
-            <!-- code coverage configuration -->
+            
+            <!-- 
+            code coverage configuration
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
@@ -105,9 +107,9 @@ qqq
                         <configuration>
                             <destFile>${project.build.directory}/jacoco.exec</destFile>
                             
-                            <!-- 
+                            
                             <propertyName>surefireArgLine</propertyName>
-                              -->
+                             
                             
                         </configuration>
                     </execution>
@@ -124,6 +126,9 @@ qqq
                     </execution>
                 </executions>
             </plugin>
+             -->
+            
+            
             <plugin>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.20</version>

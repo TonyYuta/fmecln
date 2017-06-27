@@ -59,7 +59,9 @@ public class ImageTest {
 
     @BeforeMethod
 //    public void setUp() throws Exception {
-    public void setUp() throws IOException {
+//    public void setUp() throws IOException {
+      public void setUp() throws IOException {
+
     	
         DesiredCapabilities capabilities = new DesiredCapabilities();
      //   capabilities.setCapability("deviceName", "AndroidTestDeviceNexus5");
@@ -117,8 +119,6 @@ public class ImageTest {
        // homePage = new HomePage(driver);
 		homePage.qqqMethodOnHomePage();		 
 		System.out.println("================ quantityImages2() ======= end ====================");
-
-
     }
 
     @Test(enabled = false, groups={"images", "dryrun", "regression", "all"})
