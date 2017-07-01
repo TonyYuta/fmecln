@@ -1,6 +1,7 @@
 package com.rhmsoft.fm;
 
 import java.io.IOException;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
@@ -9,7 +10,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
 
 import io.appium.java_client.AppiumDriver;
@@ -23,6 +23,7 @@ public class CalcTest {
 	// drivers
     AppiumDriver driver;
     WebDriverWait wait;
+    Calc calc;
     
     // Id
     public String homeBtnLoc = "com.rhmsoft.fm:id/new_home_title_tv";
@@ -42,23 +43,15 @@ public class CalcTest {
 //        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 //    }
 
+    
+    /*
     @AfterMethod
     public void tearDown() throws IOException {
         driver.quit();
     }
-	
+	*/
     
-  //  public void navigateToImagePage() throws NullPointerException {
-    public void navigateToImagePage() {
-         WebElement homeBtnEl = driver.findElement(By.id(homeBtnLoc));
-         homeBtnEl.click();
-     }
 
-     public void openMenuByTapOnMenuBtn() {
-        // WebElement menuBtn = driver.findElement(By.id("android:id/up"));
-         WebElement menuBtnEl = driver.findElement(By.id(menuBtnLoc));
-         menuBtnEl.click();
-     }
      
      
      /*--------------------Test Cases--------------------T*/
@@ -85,6 +78,13 @@ public class CalcTest {
      
      
      // =========== working TCs ====================
+     
+     @Test(enabled = true, groups = {"add","allcalc"}, priority=0)
+     public void test_add_ext_class() {
+     	calc = new Calc();
+     	calc.qqqCalc();
+        Assert.assertEquals(Calc.add(2, 2), 4);
+     }
 
     @Test(enabled = true, groups = {"add","allcalc"}, priority=0)
     public void test_add() {
@@ -111,6 +111,30 @@ public class CalcTest {
     public void test_object() {
         Calc o = new Calc();
     }
+    
+    //  public void navigateToImagePage() throws NullPointerException {
+    @Test(enabled = true, groups={"images", "dryrun", "regression", "all"})
+    public void navigateToImagePage() throws MalformedURLException {
+    	
+      DesiredCapabilities capabilities = new DesiredCapabilities();
+   //   capabilities.setCapability("deviceName", "AndroidTestDeviceNexus5");
+      	capabilities.setCapability("deviceName", "AndroidTestDevice01");
+      	capabilities.setCapability("app", "/Users/Yutaka/Documents/Mobile_Testing/Apk/com.rhmsoft.fm_v2.5.8-20580589_Android-4.0.apk");
+      	capabilities.setCapability("fullReset", "false");
+      	capabilities.setCapability("noReset", "true");
+
+      	driver = new AndroidDriver(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
+      	driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+    	
+        WebElement homeBtnEl = driver.findElement(By.id(homeBtnLoc));
+        homeBtnEl.click();
+     }
+
+     public void openMenuByTapOnMenuBtn() {
+        // WebElement menuBtn = driver.findElement(By.id("android:id/up"));
+         WebElement menuBtnEl = driver.findElement(By.id(menuBtnLoc));
+         menuBtnEl.click();
+     }
     
     
 

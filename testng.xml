@@ -3,9 +3,12 @@
 <suite name="Code Coverage">
     <test name="Filemanager" preserve-order="true">
         <classes>
-         
+         <!-- 
             <class name="com.rhmsoft.fm.HelperTest"/>
             <class name="com.rhmsoft.fm.ImageTest"/>
+          -->   
+            <class name="com.rhmsoft.fm.CalcTest"/>
+            
              <!-- 
             <class name="com.rhmsoft.fm.CalcTest"/>
              -->
