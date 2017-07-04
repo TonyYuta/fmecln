@@ -1,3 +1,5 @@
+killall -9 node
+appium &
 node {
 // git "https://github.com/TonyYuta/fmecln.git"
 git "https://github.com/TonyYuta/" + repo + ".git"
