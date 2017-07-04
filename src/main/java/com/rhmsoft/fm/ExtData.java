@@ -2,6 +2,7 @@ package com.rhmsoft.fm;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
@@ -13,6 +14,7 @@ import io.appium.java_client.AppiumDriver;
 public class ExtData {
 
     AppiumDriver driver;
+    Properties pro;
 
 
     // xpath
@@ -40,19 +42,21 @@ public class ExtData {
      * @throws IOException
      */
     //ExtData() throws IOException {
-    ExtData() throws IOException {
-
+    ExtData() {
+    	
+    	try {
+    
         // Specify the file location I used . operation here because
         //we have object repository inside project directory only
         File file = new File("src/test/resources/locators.properties");
 
         // Create  FileInputStream object
         FileInputStream fis;
-			fis = new FileInputStream(file);
+        fis = new FileInputStream(file);
 	
         // Create Properties class object to read properties file
-        Properties pro = new Properties();
-			pro.load(fis);
+        pro = new Properties();
+		pro.load(fis);
 		
         // xpath
          searchBtnXpath = pro.getProperty("searchBtnXpathLoc");
@@ -74,6 +78,13 @@ public class ExtData {
          allFilesBtn = pro.getProperty("allFilesBtnLoc");
          hotAppsNearby = pro.getProperty("hotAppsNearbyLoc");
          
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
     }
     
 

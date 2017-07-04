@@ -13,41 +13,39 @@ import io.appium.java_client.AppiumDriver;
 public class Common {
 
     // Id
-    public String homeBtnLoc = "com.rhmsoft.fm:id/new_home_title_tv";
-    public String menuBtnLoc = "com.rhmsoft.fm:id/home_classify_text_images";
+    public String homeTabOnHomePageLoc = "com.rhmsoft.fm:id/new_home_title_tv";
+    public String imageBtnLoc = "com.rhmsoft.fm:id/home_classify_text_images";
 
     AppiumDriver driver;
     WebDriverWait wait;
-
-
-    /*
+    
+    
     Common(AppiumDriver driver) {
         this.driver = driver;
-       // driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     }
-    */
-
+    
 
     /**
-     * Navigate to Home page
+     * open Image Page by tap on Image Btn
      */
-//    public void navigateToImagePage() throws NullPointerException {
-    public void navigateToImagePage() throws NullPointerException, Exception {
-       // WebElement homeBtnEl = driver.findElement(By.id("com.rhmsoft.fm:id/home_classify_text_images"));
-        WebElement homeBtnEl = driver.findElement(By.id(homeBtnLoc));
-        homeBtnEl.click();
+    public void openImagePage() throws NullPointerException, Exception {
+    	System.out.println("================ Common ======= openImagePage() === starts ==== 35 ========================");       
+        WebElement imageBtnEl = driver.findElement(By.id(imageBtnLoc));
+    	System.out.println("================ Common ======= openImagePage() =============== 37 ========================");       
+        imageBtnEl.click();
+    	System.out.println("================ Common ======= openImagePage() ===   end  ==== 39 ========================");       
     }
 
     /**
-     * open Menu by tap on Menu Btn
+     * open Home Page by tap on Menu Tab
      */
-    public void openMenuByTapOnMenuBtn() throws NullPointerException, Exception {
-       // WebElement menuBtn = driver.findElement(By.id("android:id/up"));
-        WebElement menuBtnEl = driver.findElement(By.id(menuBtnLoc));
-        menuBtnEl.click();
+    public void navigateToHomePage() {
+    	WebElement homeBtnEl = driver.findElement(By.id(homeTabOnHomePageLoc));
+    	homeBtnEl.click();
     }
 
-
+    
 
 
 }

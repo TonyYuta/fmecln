@@ -1,11 +1,7 @@
 package com.rhmsoft.fm;
 
-/**
- * Created by aolyva on 5/9/17.
- */
-
-import java.io.IOException;
 import java.net.URL;
+
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -73,8 +69,8 @@ public class ImageTest_old {
     /*--------------------Test Cases--------------------T*/
 
     @Test(enabled = true, groups={"Images", "DryRun", "Regression"})
-    public void quantityImages() throws InterruptedException, IOException {
-        homePage.navigateToImagePage();
+    public void quantityImages() throws NullPointerException, Exception {
+        homePage.openImagePage();
     }
 
     @Test(enabled = true, groups={"Images", "DryRun", "Regression"})

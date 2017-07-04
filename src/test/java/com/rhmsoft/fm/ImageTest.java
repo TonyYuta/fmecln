@@ -6,8 +6,8 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 /**
@@ -20,10 +20,25 @@ import io.appium.java_client.android.AndroidDriver;
 public class ImageTest {
 
     AppiumDriver driver;
-    HomePage homePage;
+    
+    DesiredCapabilities capabilities;
+    
+    // creating instance of Helper class
     Helper helper;
+    
+    // creating instance of Common class
+    Common common;
+    
+    // creating instance of HomePage class
+    HomePage homePage;
+    
+    // creating instance of ExtData class
     ExtData extData;
-    Calc calc;
+    
+    // creating instance of ImagePage class
+    ImagePage imagePage;
+    
+
     
     // xpath
     String searchBtnXpath;
@@ -57,13 +72,15 @@ public class ImageTest {
     // Capabilities
     public String capabilInfo;
 
-    @BeforeMethod
-//    public void setUp() throws Exception {
-//    public void setUp() throws IOException {
+    //@BeforeMethod
+    //@BeforeMethod(alwaysRun = true)
+    @BeforeClass(alwaysRun = true)
       public void setUp() throws IOException {
-
     	
-        DesiredCapabilities capabilities = new DesiredCapabilities();
+    	System.out.println("======================= @BeforeMethod === starts ===== line 76 ========================");       
+
+        //DesiredCapabilities capabilities = new DesiredCapabilities();
+    	capabilities = new DesiredCapabilities();
      //   capabilities.setCapability("deviceName", "AndroidTestDeviceNexus5");
         capabilities.setCapability("deviceName", "AndroidTestDevice01");
         capabilities.setCapability("app", "/Users/Yutaka/Documents/Mobile_Testing/Apk/com.rhmsoft.fm_v2.5.8-20580589_Android-4.0.apk");
@@ -72,74 +89,52 @@ public class ImageTest {
 
         driver = new AndroidDriver(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
         driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-
+        
+        // creating instance of Common class
+        common = new Common(driver);
+        
         // creating instance of HomePage class
         homePage = new HomePage(driver);
-
-        // creating instance of Helper class
-        helper = new Helper(driver);
-
-        // creating instance of ExtData class
-        extData = new ExtData();
         
-        // creating instance of Calc class
-        calc = new Calc();
-    }
+        // creating instance of Helper class
+        imagePage = new ImagePage(driver); 
+        
+        // creating instance of Helper class
+        helper = new Helper(driver); 
+        
+        // creating instance of ExtData class
+        ExtData extData = new ExtData();
+        
+    	System.out.println("======================= @BeforeMethod ===   end   === line 98 ========================");
+   }
 
-    @AfterMethod
+    @AfterClass
     public void tearDown() throws IOException {
         driver.quit();
     }
     
     /*--------------------Test Cases--------------------T*/
-    /**
+	/**
+     * @throws Exception 
+     * @throws NullPointerException 
      */
-    @Test(enabled = false, groups={"images", "dryrun", "regression", "all"})
-    public void quantityImages() {
-   // public void quantityImages() {
-    	
-    	//homePage = new HomePage(driver);
-    	 
-			homePage.navigateToImagePage();		 
-
-/*        
-        catch (NullPointerException e) {
-			// TODO Auto-generated catch block
-			System.out.println("================ NullPointerException ====================");
-
-			e.printStackTrace();
-		}
- */      
-        
-    	System.out.println("=========== quantityImages() end ==========");
-    }
-
-    @Test(enabled = false, groups={"images", "dryrun", "regression", "all"}, priority = 1)
-    public void quantityImages2() {
-       // homePage = new HomePage(driver);
-		homePage.qqqMethodOnHomePage();		 
-		System.out.println("================ quantityImages2() ======= end ====================");
-    }
-
-    @Test(enabled = false, groups={"images", "dryrun", "regression", "all"})
-    public void quantityImages3() {
-    }
-
-    @Test(enabled = false, groups={"images", "dryrun", "regression", "all"})
-    public void quantityImages4() {
-    }
-
-
-    
-    // =========== working TCs ====================
-
-    @Test(enabled = true, groups = {"add","allcalc"}, priority=0)
-    public void test_add() {
-    	//calc = new Calc();
-    	calc.qqqCalc();
-        Assert.assertEquals(Calc.add(2, 2), 4);
+    @Test(enabled = true, groups={"images", "dryrun", "regression", "all"}, priority=0)
+    public void quantityImages() throws NullPointerException, Exception {
+    	int expected = 3;
+    	int actual;
+		int cameraRollQtyPict = 0;
+    	homePage.openImagePage();
+    	System.out.println("=========== quantityImages() ======== 124  ======");
+    	actual = imagePage.cameraRollQty();
+    	System.out.println("=========== cameraRollQtyPict: " + cameraRollQtyPict + " ======");
+    	System.out.println("=========== quantityImages() end ==== 127 ======");
+    	Assert.assertEquals(expected, actual);
     }
     
+    @Test(enabled = true, groups = {"home", "dryrun", "regression", "all"}, priority=1)
+    public void navigateToHomePage() {
+
+    }
     
 
 }

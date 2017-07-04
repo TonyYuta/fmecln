@@ -10,6 +10,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import io.appium.java_client.AppiumDriver;
@@ -23,25 +24,28 @@ public class CalcTest {
 	// drivers
     AppiumDriver driver;
     WebDriverWait wait;
-    Calc calc;
+    Calc calc = new Calc();
     
     // Id
     public String homeBtnLoc = "com.rhmsoft.fm:id/new_home_title_tv";
     public String menuBtnLoc = "com.rhmsoft.fm:id/home_classify_text_images";
     
-//    @BeforeMethod
-//    public void setUp() throws Exception {
-//
-//        DesiredCapabilities capabilities = new DesiredCapabilities();
-//     //   capabilities.setCapability("deviceName", "AndroidTestDeviceNexus5");
-//        capabilities.setCapability("deviceName", "AndroidTestDevice01");
-//        capabilities.setCapability("app", "/Users/Yutaka/Documents/Mobile_Testing/Apk/com.rhmsoft.fm_v2.5.8-20580589_Android-4.0.apk");
-//        capabilities.setCapability("fullReset", "false");
-//        capabilities.setCapability("noReset", "true");
-//
-//        driver = new AndroidDriver(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
-//        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-//    }
+    //@BeforeMethod
+    @BeforeClass
+    public void setUp() throws Exception {
+
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+     //   capabilities.setCapability("deviceName", "AndroidTestDeviceNexus5");
+        capabilities.setCapability("deviceName", "AndroidTestDevice01");
+        capabilities.setCapability("app", "/Users/Yutaka/Documents/Mobile_Testing/Apk/com.rhmsoft.fm_v2.5.8-20580589_Android-4.0.apk");
+        capabilities.setCapability("fullReset", "false");
+        capabilities.setCapability("noReset", "true");
+
+        driver = new AndroidDriver(new URL("http://0.0.0.0:4723/wd/hub"), capabilities);
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+        
+        
+    }
 
     
     /*
@@ -81,7 +85,7 @@ public class CalcTest {
      
      @Test(enabled = true, groups = {"add","allcalc"}, priority=0)
      public void test_add_ext_class() {
-     	calc = new Calc();
+     	//calc = new Calc();
      	calc.qqqCalc();
         Assert.assertEquals(Calc.add(2, 2), 4);
      }
