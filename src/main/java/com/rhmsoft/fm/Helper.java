@@ -21,4 +21,5 @@ public class Helper {
     public String deviceCapabilities(String testDevice) {
         return "============== qqq ================";
     }
+    
 }

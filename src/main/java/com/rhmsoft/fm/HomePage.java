@@ -11,13 +11,13 @@ public class HomePage extends Common {
 	 */
 	HomePage(AppiumDriver driver) {
 		super(driver);
-		// TODO Auto-generated constructor stub
 	}
 
 	AppiumDriver driver;
     WebDriverWait wait;
 
     ExtData extData;
+    
 /*
     HomePage(AppiumDriver driver) {
         this.driver = driver;

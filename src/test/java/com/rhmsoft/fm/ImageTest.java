@@ -6,8 +6,8 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 /**
@@ -38,8 +38,9 @@ public class ImageTest {
     // creating instance of ImagePage class
     ImagePage imagePage;
     
+    // creating instance of CameraRollPage class    
+    CameraRollPage cameraRollPage; 
 
-    
     // xpath
     String searchBtnXpath;
     String homeBtnXpath;
@@ -60,7 +61,6 @@ public class ImageTest {
     String allFilesBtn;
     String hotAppsNearby;
     
-
     public String getCapabilInfo() {
         return capabilInfo;
     }
@@ -72,12 +72,14 @@ public class ImageTest {
     // Capabilities
     public String capabilInfo;
 
-    //@BeforeMethod
-    //@BeforeMethod(alwaysRun = true)
-    @BeforeClass(alwaysRun = true)
+    //@BeforeClass(alwaysRun = true)
+    /**
+     * @throws IOException
+     */
+    @BeforeMethod(alwaysRun = true)
       public void setUp() throws IOException {
     	
-    	System.out.println("======================= @BeforeMethod === starts ===== line 76 ========================");       
+    	System.out.println("\n============\n===========\n @BeforeMethod === starts ===== line 83 \n===========\n=============\n");       
 
         //DesiredCapabilities capabilities = new DesiredCapabilities();
     	capabilities = new DesiredCapabilities();
@@ -99,36 +101,72 @@ public class ImageTest {
         // creating instance of Helper class
         imagePage = new ImagePage(driver); 
         
+        // creating instance of CameraRollPage class
+        cameraRollPage = new CameraRollPage(driver); 
+        
         // creating instance of Helper class
         helper = new Helper(driver); 
         
         // creating instance of ExtData class
         ExtData extData = new ExtData();
         
-    	System.out.println("======================= @BeforeMethod ===   end   === line 98 ========================");
+    	System.out.println("\n===========\n============\n @BeforeMethod ===   end   === line 113 \n============\n============\n");
    }
-
-    @AfterClass
-    public void tearDown() throws IOException {
+    
+    //@AfterClass(alwaysRun = true)
+    /**
+     * @throws IOException
+     */
+    @AfterMethod(alwaysRun = true)
+    public void closeApp() throws IOException {
+        driver.closeApp();
         driver.quit();
     }
     
     /*--------------------Test Cases--------------------T*/
+    
+	/**
+     * @throws Exception 
+     * @throws NullPointerException 
+     */
+    @Test(enabled = true, groups={"images", "dryrun", "regression", "all"}, priority=0)
+    public void quantityCameraRollImages() throws NullPointerException, Exception {
+    	int expected = 3;	// Camera Roll: 3
+    	homePage.openImagePage();
+    	int actual = imagePage.cameraRollQty();
+    	Assert.assertEquals(expected, actual, "QTY Camera Roll images doesn't match to 3");
+    }
+    
+	/**
+     * @throws Exception 
+     * @throws NullPointerException 
+     */
+    @Test(enabled = true, groups={"images", "dryrun", "regression", "all"}, priority=0)
+    public void quantityScreenshots() throws NullPointerException, Exception {
+    	int expected = 2;	// Screenshots: 2
+    	homePage.openImagePage();
+    	int actual = imagePage.screenshotsQty();
+    	Assert.assertEquals(expected, actual, "QTY Screenshots doesn't match to 2");
+    }
+    
 	/**
      * @throws Exception 
      * @throws NullPointerException 
      */
     @Test(enabled = true, groups={"images", "dryrun", "regression", "all"}, priority=0)
     public void quantityImages() throws NullPointerException, Exception {
-    	int expected = 3;
-    	int actual;
-		int cameraRollQtyPict = 0;
+    	int expected = 5;	// Camera Roll: 3  + Screenshots: 2
     	homePage.openImagePage();
-    	System.out.println("=========== quantityImages() ======== 124  ======");
-    	actual = imagePage.cameraRollQty();
-    	System.out.println("=========== cameraRollQtyPict: " + cameraRollQtyPict + " ======");
-    	System.out.println("=========== quantityImages() end ==== 127 ======");
+    	int actual = imagePage.cameraRollQty() + imagePage.screenshotsQty();
     	Assert.assertEquals(expected, actual);
+    }
+    
+    @Test(enabled = true, groups = {"cameraroll", "images", "dryrun", "regression", "all"}, priority = 1)
+    public void qtyCamerarollImages() throws NullPointerException, Exception {
+    	int expected = 3;	// Camera Roll: 3
+    	homePage.openImagePage();
+    	imagePage.openCameraRollPage();
+    	Assert.assertEquals(cameraRollPage.quantityCameraRollImages(), expected, "QTY Camera Roll images doesn't match to " + expected);
     }
     
     @Test(enabled = true, groups = {"home", "dryrun", "regression", "all"}, priority=1)

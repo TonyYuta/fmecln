@@ -19,25 +19,32 @@ public class ImagePage extends Common {
 		super(driver);
 	}
 
-//	AppiumDriver driver;
     WebDriverWait wait;
     
-    String screenshotsQtyXPLoc = "//android.widget.FrameLayout[1]/android.view.ViewGroup[1]/android.widget.FrameLayout[2]/android.support.v4.widget.DrawerLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.support.v4.view.ViewPager[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.GridView[1]/android.widget.LinearLayout[2]/android.widget.RelativeLayout[1]/android.widget.TextView[2]";
+    String screenshotsQtyXPLoc   = "//android.widget.FrameLayout[1]/android.view.ViewGroup[1]/android.widget.FrameLayout[2]/android.support.v4.widget.DrawerLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.support.v4.view.ViewPager[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.GridView[1]/android.widget.LinearLayout[2]/android.widget.RelativeLayout[1]/android.widget.TextView[2]";
     String cameraRollTitleXPLoc  = "//android.widget.FrameLayout[1]/android.view.ViewGroup[1]/android.widget.FrameLayout[2]/android.support.v4.widget.DrawerLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.support.v4.view.ViewPager[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.GridView[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[1]";
-    String cameraRollQtyXPLoc  = "//android.widget.FrameLayout[1]/android.view.ViewGroup[1]/android.widget.FrameLayout[2]/android.support.v4.widget.DrawerLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.support.v4.view.ViewPager[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.GridView[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[2]";
-    
+    String cameraRollQtyXPLoc    = "//android.widget.FrameLayout[1]/android.view.ViewGroup[1]/android.widget.FrameLayout[2]/android.support.v4.widget.DrawerLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.support.v4.view.ViewPager[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.GridView[1]/android.widget.LinearLayout[1]/android.widget.RelativeLayout[1]/android.widget.TextView[2]";
+    String cameraRollBtnXPLoc    = "//android.widget.FrameLayout[1]/android.view.ViewGroup[1]/android.widget.FrameLayout[2]/android.support.v4.widget.DrawerLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.support.v4.view.ViewPager[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.GridView[1]/android.widget.LinearLayout[1]/android.widget.FrameLayout[1]/android.widget.ImageView[1]";
     public int cameraRollQty() {
-    	System.out.println("=========== cameraRollQty() === start ==== 30 ======");
-    	int result;
-    	WebElement cameraRollQtyXPEl = driver.findElement(By.xpath(cameraRollQtyXPLoc));
-    	result = Integer.parseInt(cameraRollQtyXPEl.getText());
-    	System.out.println("=========== result: " + result + "          ==== 34 ======");
-      	System.out.println("=========== cameraRollQty() ===  end  ==== 35 ======");
-    	return result;
+    	WebElement cameraRollQtyEl = driver.findElement(By.xpath(cameraRollQtyXPLoc));
+    	return Integer.parseInt(cameraRollQtyEl.getText());
     }
 
+    public int screenshotsQty() {
+    	WebElement screenshotsQtyEl = driver.findElement(By.xpath(screenshotsQtyXPLoc));
+    	return Integer.parseInt(screenshotsQtyEl.getText());
+    }
  
+    /**
+     * open Image Page by tap on Image Btn
+     */
+    public void openCameraRollPage() throws NullPointerException, Exception {
+    	
+        WebElement cameraRollBtnEl = driver.findElement(By.xpath(cameraRollBtnXPLoc));
+        cameraRollBtnEl.click();
+    }
 
+    
 
 
 }

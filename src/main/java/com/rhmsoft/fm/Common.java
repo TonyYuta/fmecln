@@ -30,11 +30,8 @@ public class Common {
      * open Image Page by tap on Image Btn
      */
     public void openImagePage() throws NullPointerException, Exception {
-    	System.out.println("================ Common ======= openImagePage() === starts ==== 35 ========================");       
         WebElement imageBtnEl = driver.findElement(By.id(imageBtnLoc));
-    	System.out.println("================ Common ======= openImagePage() =============== 37 ========================");       
         imageBtnEl.click();
-    	System.out.println("================ Common ======= openImagePage() ===   end  ==== 39 ========================");       
     }
 
     /**
@@ -45,6 +42,7 @@ public class Common {
     	homeBtnEl.click();
     }
 
+    
     
 
 
