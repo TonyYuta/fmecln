@@ -1,6 +1,4 @@
 node {
-killall -9 node
-appium &
 // git "https://github.com/TonyYuta/fmecln.git"
 git "https://github.com/TonyYuta/" + repo + ".git"
 def mvnHome = tool 'Maven_3.5.0'
