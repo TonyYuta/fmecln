@@ -40,6 +40,9 @@ public class ImageTest {
     
     // creating instance of CameraRollPage class    
     CameraRollPage cameraRollPage; 
+    
+    // creating instance of ScreenshotsPage class    
+    ScreenshotsPage screenshotsPage; 
 
     // xpath
     String searchBtnXpath;
@@ -104,6 +107,9 @@ public class ImageTest {
         // creating instance of CameraRollPage class
         cameraRollPage = new CameraRollPage(driver); 
         
+        // creating instance of ScreenshotsPage class
+        screenshotsPage = new ScreenshotsPage(driver); 
+        
         // creating instance of Helper class
         helper = new Helper(driver); 
         
@@ -167,6 +173,14 @@ public class ImageTest {
     	homePage.openImagePage();
     	imagePage.openCameraRollPage();
     	Assert.assertEquals(cameraRollPage.quantityCameraRollImages(), expected, "QTY Camera Roll images doesn't match to " + expected);
+    }
+    
+    @Test(enabled = true, groups = {"screenshots", "images", "dryrun", "regression", "all"}, priority = 1)
+    public void qtyScreenshots() throws NullPointerException, Exception {
+    	int expected = 2;
+    	homePage.openImagePage();
+    	imagePage.openScreenshotsPage();
+    	Assert.assertEquals(screenshotsPage.quantityScreenshots(), expected, "QTY screenshots doesn't match to " + expected);
     }
     
     @Test(enabled = true, groups = {"home", "dryrun", "regression", "all"}, priority=1)
