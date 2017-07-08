@@ -78,6 +78,7 @@ public class ExtData {
          allFilesBtn = pro.getProperty("allFilesBtnLoc");
          hotAppsNearby = pro.getProperty("hotAppsNearbyLoc");
          
+         
 			} catch (FileNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
