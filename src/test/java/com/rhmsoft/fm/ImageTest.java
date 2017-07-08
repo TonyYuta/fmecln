@@ -183,9 +183,15 @@ public class ImageTest {
     	Assert.assertEquals(screenshotsPage.quantityScreenshots(), expected, "QTY screenshots doesn't match to " + expected);
     }
     
-    @Test(enabled = true, groups = {"home", "dryrun", "regression", "all"}, priority=1)
-    public void navigateToHomePage() {
-
+    /**
+     * using hardcoded element locator from ImagePageTest
+     * @throws NullPointerException
+     * @throws Exception
+     */
+    @Test(enabled = true, groups = {"home", "dryrun", "regression", "all"}, priority = 1)
+    public void navigateToHomePageFromImagePage() throws NullPointerException, Exception {
+    	homePage.openImagePage();
+    	imagePage.navigateToHomePage();
     }
     
 
