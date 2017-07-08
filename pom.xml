@@ -1,9 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-<!--
-qqq
--->
+
     <groupId>com.rhmsoft.fm</groupId>
     <artifactId>fmecln</artifactId>
     <version>1.0-SNAPSHOT</version>
@@ -24,7 +22,7 @@ qqq
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>6.10</version>
+            <version>6.11</version>
         </dependency>
 
 
@@ -70,7 +68,7 @@ qqq
                 <version>2.20</version>
                 <configuration>
                     <suiteXmlFiles>
-                        <suiteXmlFile>testng.xml</suiteXmlFile>
+                        <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
                     <properties>
                         <property>
@@ -104,12 +102,8 @@ qqq
                             <goal>prepare-agent</goal>
                         </goals>
                         <configuration>
-                            <destFile>${project.build.directory}/jacoco.exec</destFile>
-                            
-                            <!-- 
+                            <destFile>${project.build.directory}/jacoco.exec</destFile>                        
                             <propertyName>surefireArgLine</propertyName>
-                              -->
-                            
                         </configuration>
                     </execution>
                     <execution>
@@ -137,11 +131,7 @@ qqq
                         </goals>
                         <configuration>
                             <testFailureIgnore>true</testFailureIgnore>
-                            
-                             
                             <argLine>${surefireArgLine}</argLine>
-                            
-                            
                         </configuration>
                     </execution>
                 </executions>

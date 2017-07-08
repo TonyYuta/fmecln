@@ -40,4 +40,6 @@ public class ScreenshotsPage extends Common {
 		return quantityScreenshots.size();
 	}
 	
+	
+	
 }
