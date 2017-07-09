@@ -1,3 +1,11 @@
+/**
+ *   File Name: ExtData.java<br>
+ *
+ *   Yutaka<br>
+ *   Created: Jul 8, 2017
+ *   
+ */
+
 package com.rhmsoft.fm;
 
 import java.io.File;
@@ -5,111 +13,61 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Properties;
 
-import io.appium.java_client.AppiumDriver;
-
 /**
- * Created by aolyva on 5/10/17.
+ * ExtData //ADDD (description of class)
+ * <p>
+ * //ADDD (description of core fields)
+ * <p>
+ * //ADDD (description of core methods)
+ * 
+ * @author      Yutaka
+ * @version     1.0.0
+ * @since       1.0
+ *
  */
 public class ExtData {
-
-    AppiumDriver driver;
+	
     Properties pro;
-    HashMap<String, String> locators;
-    Map<String, String> map;
+    HashMap<String, String> maplocators;
 
-    
-    // xpath
-    String searchBtnXpath;
-    String homeBtnXpath;
-    String recentBtnXPath;
-
-    // id
-    String recentBtn;
-    String homeBtn;
-    String imageBtn;
-    String audioBtn;
-    String videoBtn;
-    String docBtn;
-    String deviceBtn;
-    String largeFilesBtn;
-    String unnecessaryFilesBtn;
-    String usedApkBtn;
-    String installedAppsBtn;
-    String allFilesBtn;
-    String hotAppsNearby;
-
-
-    /**
-     * @throws IOException
-     */
-    //ExtData() throws IOException {
-    ExtData() {
-    	
-    	try {
-    
-    		locators = new HashMap();
-    		
-	        // Specify the file location I used . operation here because
-	        //we have object repository inside project directory only
-	        File file = new File("src/test/resources/locators.properties");
-	
-	        // Create  FileInputStream object
-	        FileInputStream fis;
-	        fis = new FileInputStream(file);
+	//@BeforeMethod(alwaysRun = true)
+	public void getPropertiesData() {
 		
-	        // Create Properties class object to read properties file
-	        pro = new Properties();
-			pro.load(fis);
-			
-	        // xpath
-	         searchBtnXpath = pro.getProperty("searchBtnXpathLoc");
-	         homeBtnXpath = pro.getProperty("homeBtnXpathLoc");
-	         recentBtnXPath = pro.getProperty("recentBtnXPathLoc");
-	
-	        // id
-	         recentBtn = pro.getProperty("recentBtnLoc");
-	         homeBtn = pro.getProperty("homeBtnLoc");
-	         imageBtn = pro.getProperty("imageBtnLoc");
-	         audioBtn = pro.getProperty("audioBtnLoc");
-	         videoBtn = pro.getProperty("videoBtnLoc");
-	         docBtn = pro.getProperty("docBtnLoc");
-	         deviceBtn = pro.getProperty("deviceBtnLoc");
-	         largeFilesBtn = pro.getProperty("largeFilesBtnLoc");
-	         unnecessaryFilesBtn = pro.getProperty("unnecessaryFilesBtnLoc");
-	         usedApkBtn = pro.getProperty("usedApkBtnLoc");
-	         installedAppsBtn = pro.getProperty("installedAppsBtnLoc");
-	         allFilesBtn = pro.getProperty("allFilesBtnLoc");
-	         hotAppsNearby = pro.getProperty("hotAppsNearbyLoc");
-         
-	         locators.put("el01Key", "el01val");
-	         
-	         
-	        // Map<String, String> map = new HashMap(pro);
-	         map = new HashMap(pro);
-	         
-	
-	         
-			} catch (FileNotFoundException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+        try {
+
+		 // creating instance of ExtData_old class
+        ExtData_old extData_old = new ExtData_old();
+    	extData_old.printMap(); 	
     	
 
+        // Specify the file location I used . operation here because
+        //we have object repository inside project directory only
+        File file = new File("src/test/resources/locators.properties");
 
-  }
-    
-    public void printMap() {
-        ExtData ed = new ExtData();
-        System.out.println("===========================");
-    	System.out.println(map);
-        System.out.println("===========================");
+        // Create  FileInputStream object
+        FileInputStream fis;
+			fis = new FileInputStream(file);
+		
+	
+        // Create Properties class object to read properties file
+        pro = new Properties();
+		try {
+			pro.load(fis);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        maplocators = new HashMap(pro);
+        System.out.println("===============++++++++++++++++++");
+        System.out.println(maplocators);
+        System.out.println("===============++++++++++++++++++");
 
-    }
-    
+        } catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 }

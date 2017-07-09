@@ -16,7 +16,7 @@ public class HomePage extends Common {
 	AppiumDriver driver;
     WebDriverWait wait;
 
-    ExtData extData;
+    ExtData_old extData_old;
     
 /*
     HomePage(AppiumDriver driver) {

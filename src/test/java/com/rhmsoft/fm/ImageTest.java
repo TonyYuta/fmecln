@@ -1,12 +1,7 @@
 package com.rhmsoft.fm;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URL;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -68,11 +63,11 @@ public class ImageTest {
     String installedAppsBtn;
     String allFilesBtn;
     String hotAppsNearby;
-
+/*
     Properties pro;
 
     Map<String, String> maplocators;
-
+*/
     
     public String getCapabilInfo() {
         return capabilInfo;
@@ -124,8 +119,14 @@ public class ImageTest {
         helper = new Helper(driver); 
         
         // creating instance of ExtData class
-        ExtData extData = new ExtData();
-    	extData.printMap(); 	
+        extData = new ExtData();
+        
+        extData.getPropertiesData();
+        
+     /*   
+        // creating instance of ExtData_old class
+        ExtData_old extData_old = new ExtData_old();
+    	extData_old.printMap(); 	
     	
         // Specify the file location I used . operation here because
         //we have object repository inside project directory only
@@ -142,7 +143,7 @@ public class ImageTest {
         System.out.println("===============++++++++++++++++++");
         System.out.println(maplocators);
         System.out.println("===============++++++++++++++++++");
-
+*/
         
     	System.out.println("\n===========\n============\n @BeforeMethod ===   end   === line 113 \n============\n============\n");
    }
@@ -224,7 +225,7 @@ public class ImageTest {
     
     @Test(enabled = true, groups = {"", "home", "dryrun", "regression", "all"}, priority = 1)
     public void printMapFromProperies() throws NullPointerException, Exception {
-    	extData.printMap();
+    	extData_old.printMap();
     }
     
     
