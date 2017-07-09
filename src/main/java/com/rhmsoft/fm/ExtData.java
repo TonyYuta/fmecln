@@ -37,11 +37,6 @@ public class ExtData {
 		
         try {
 
-		 // creating instance of ExtData_old class
-        ExtData_old extData_old = new ExtData_old();
-    	extData_old.printMap(); 	
-    	
-
         // Specify the file location I used . operation here because
         //we have object repository inside project directory only
         File file = new File("src/test/resources/locators.properties");
