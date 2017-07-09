@@ -115,6 +115,7 @@ public class ImageTest {
         
         // creating instance of ExtData class
         ExtData extData = new ExtData();
+    	extData.printMap();
         
     	System.out.println("\n===========\n============\n @BeforeMethod ===   end   === line 113 \n============\n============\n");
    }
@@ -194,7 +195,7 @@ public class ImageTest {
     	imagePage.navigateToHomePage();
     }
     
-    @Test(enabled = true, groups = {"data", "home", "dryrun", "regression", "all"}, priority = 1)
+    @Test(enabled = true, groups = {"", "home", "dryrun", "regression", "all"}, priority = 1)
     public void printMapFromProperies() throws NullPointerException, Exception {
     	extData.printMap();
     }
