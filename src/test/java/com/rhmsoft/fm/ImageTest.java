@@ -1,7 +1,12 @@
 package com.rhmsoft.fm;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -63,6 +68,11 @@ public class ImageTest {
     String installedAppsBtn;
     String allFilesBtn;
     String hotAppsNearby;
+
+    Properties pro;
+
+    Map<String, String> maplocators;
+
     
     public String getCapabilInfo() {
         return capabilInfo;
@@ -116,6 +126,20 @@ public class ImageTest {
         // creating instance of ExtData class
         ExtData extData = new ExtData();
     	extData.printMap();
+    	
+    	
+        // Specify the file location I used . operation here because
+        //we have object repository inside project directory only
+        File file = new File("src/test/resources/locators.properties");
+
+        // Create  FileInputStream object
+        FileInputStream fis;
+        fis = new FileInputStream(file);
+	
+        // Create Properties class object to read properties file
+        pro = new Properties();
+		pro.load(fis);
+        maplocators = new HashMap(pro);
         
     	System.out.println("\n===========\n============\n @BeforeMethod ===   end   === line 113 \n============\n============\n");
    }
