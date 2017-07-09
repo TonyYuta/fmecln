@@ -194,5 +194,11 @@ public class ImageTest {
     	imagePage.navigateToHomePage();
     }
     
+    @Test(enabled = true, groups = {"data", "home", "dryrun", "regression", "all"}, priority = 1)
+    public void printMapFromProperies() throws NullPointerException, Exception {
+    	extData.printMap();
+    }
+    
+    
 
 }
