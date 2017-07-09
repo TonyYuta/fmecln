@@ -225,7 +225,7 @@ public class ImageTest {
     
     @Test(enabled = true, groups = {"", "home", "dryrun", "regression", "all"}, priority = 1)
     public void printMapFromProperies() throws NullPointerException, Exception {
-    	extData_old.printMap();
+    	
     }
     
     
