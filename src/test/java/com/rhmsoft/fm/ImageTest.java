@@ -125,8 +125,7 @@ public class ImageTest {
         
         // creating instance of ExtData class
         ExtData extData = new ExtData();
-    	extData.printMap();
-    	
+    	extData.printMap(); 	
     	
         // Specify the file location I used . operation here because
         //we have object repository inside project directory only
@@ -140,6 +139,10 @@ public class ImageTest {
         pro = new Properties();
 		pro.load(fis);
         maplocators = new HashMap(pro);
+        System.out.println("===============++++++++++++++++++");
+        System.out.println(maplocators);
+        System.out.println("===============++++++++++++++++++");
+
         
     	System.out.println("\n===========\n============\n @BeforeMethod ===   end   === line 113 \n============\n============\n");
    }
